@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<
+<head>
+    <meta charset="UTF-3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Booking Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: white;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #booking-form {
+            background-color: gray;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Dashboard</h1>
+    <h2>Zetech university hostels</h2>
+    <ul>
+        <li>
+		
+    <nav>
+        
+        <ul>
+            <li><a href="#Booking">BOOKING</a></li>
+            <li><a href="#Sign up">SIGN UP</a></li>
+			<li><a href="#Availability">AVAILABILITY</a></li>
+            <li><a href="#Login">LOGIN</a></li>
+            
+            
+        </ul>
+    </nav>
+	    <li>
+            <h3>Hostel Name: Agape hostels</h3>
+            <p>Category: Single Room</p>
+            <p>Price: ksh 24000 per semester</p>
+            <p>Available Space: 20 rooms</p>
+            <button onclick="bookHostel('Agape Hostels')">Book Now</button>
+        </li>
+        <li>
+            <h3>Hostel Name: Elian Hostels</h3>
+            <p>Category: Double Room</p>
+            <p>Price: ksh 30000 per semester</p>
+            <p>Available Space: 10 rooms</p>
+            <button onclick="bookHostel('Elian Hostels')">Book Now</button>
+        </li>
+        <h3>Hostel Name: Mayian hostels</h3>
+            <p>Category: Single Room</p>
+            <p>Price: ksh 24000 per semester</p>
+            <p>Available Space: 15 rooms</p>
+            <button onclick="bookHostel('Mayian Hostels')">Book Now</button>
+        </li>
+    </ul>
+    
+    <div id="booking-form" style="display: none;">
+        <h2>Booking Form</h2>
+        <form action="process_booking.php" method="post">
+            <input type="hidden" id="selectedHostel" name="selectedHostel" value="">
+            <label for="name">Name:</label>
+            <input type="text" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br>
+
+            <label for="check-in">Check-In Date:</label>
+            <input type="date" name="check_in" required><br>
+
+            <label for="check-out">Check-Out Date:</label>
+            <input type="date" name="check_out" required><br>
+
+            <label for="students">Number of students:</label>
+            <input type="number" name="students" required><br>
+
+            <input type="submit" value="Book Now">
+        </form>
+    </div>
+    
+    <script>
+        function bookHostel(hostelName) {
+            document.getElementById('selectedHostel').value = hostelName;
+            document.getElementById('booking-form').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
